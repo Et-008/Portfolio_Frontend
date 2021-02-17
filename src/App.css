@@ -14,20 +14,23 @@ a {
 li {
     list-style: none;
 }
+button:disabled {
+    cursor: not-allowed;
+}
 
 header {
     position: relative;
     height: 50vh;
     width: 100vw;
-    color: wheat;
 }
 header::after {
     content: '';
-    background-image: url("./assets/images/headerBackground2.jpg");
+    background-color: thistle;
+    background-image: url("./assets/images/headerBackground.jpg");
     background-position: 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: 50%;
+    background-position-y: 30%;
     display: inline-block;
     position: absolute;
     top: 0;
@@ -47,6 +50,13 @@ header::after {
     color: black;
     justify-content: space-between;
     align-items: center;
+}
+
+.Sticky {
+    position: sticky;
+    background-color: white;
+    top: 0;
+    width: 100vw;
 }
 
 .Navbar>h3 {
@@ -86,6 +96,7 @@ header::after {
     display: inline-block;
     padding: 2px;
     cursor: pointer;
+    color: wheat;
 }
 
 .IntroSubTitle::before {
@@ -101,21 +112,45 @@ header::after {
     background-color: cornflowerblue;
 }
 
-.Maincontent > section > div {
-    height: 100vh;
+.Maincontent {
+    margin: 0;
 }
 
-.Projects {
+.Project {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    height: 290px;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.AllProject {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
     padding: 15px;
+    box-sizing: border-box;
 }
-.Projects>div {
+/* .Projects::after {
+    content: "Show more";
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 47.5%;
+    z-index: 3;
+    background-color: wheat;
+    color: black;
+    width: 100px;
+    height: 30px;
+} */
+.ProjectDisplayCard {
     max-height: 300px;
     box-sizing: border-box;
     padding: 10px;
     box-shadow: 0 0 5px 0 silver;
+    background-color: aliceblue;
 }
 
 .Button {
@@ -126,6 +161,11 @@ header::after {
     border-radius: 20px;
     color: wheat;
     cursor: pointer;
+}
+
+.Button>a {
+    width: 100%;
+    height: 100%;
 }
 
 .Button:hover {

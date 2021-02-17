@@ -1,11 +1,89 @@
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  let [classes, setClasses] = useState('Project');
+  let [btnText, setBtnText] = useState('Show More');
+  let Projects = [
+    {
+      title: "Portfolio Site (React JS)",
+      technologies: ["React", "Javascript", "CSS", "Node JS", "Express"],
+      githubLink: "https://github.com/Et-008/Portfolio",
+      // liveLink: ""
+    },
+    {
+      title: "Instagram clone",
+      technologies: ["React", "Firebase", "Javascript", "CodeSandBox", "CSS"],
+      githubLink: "https://github.com/Et-008/instagram-clone",
+      liveLink: "https://tdgys.csb.app",
+    },
+    {
+      title: "Burger builder app",
+      technologies: ["React", "Firebase", "Javascript", "CodeSandBox", "CSS"],
+      githubLink: "https://github.com/Et-008/BurgerBuilder",
+      liveLink: "https://97hlm.csb.app"
+    },
+    {
+      title: "NEWS APP (React JS)",
+      technologies: ["React", "Javascript", "CSS", "Node JS", "Express"],
+      githubLink: "https://github.com/Et-008/News_app",
+      // liveLink: ""
+    },
+    {
+      title: "NEWS APP (Vanilla JS)",
+      technologies: ["Javascript", "CSS", "Node JS", "Express"],
+      githubLink: "https://github.com/Et-008/NEUS-2.0",
+      liveLink: "https://news-for-us.herokuapp.com/in"
+    },
+    {
+      title: "Todo List app",
+      technologies: ["Javascript", "CSS", "Node JS", "Express", "MongoDB-Atlas"],
+      githubLink: "https://github.com/Et-008/Treelo",
+      liveLink: "https://enigmatic-crag-81088.herokuapp.com"
+    },
+    {
+      title: "GSAP sample (Vanilla JS and GSAP)",
+      technologies: ["GSAP", "Javascript", "CSS", "Paper.js"],
+      githubLink: "https://github.com/Et-008/Gsap-sample",
+      // liveLink: ""
+    },
+  ]
+
+  let showAllProjects = () => {
+    if(classes === 'Project') {
+      setClasses('AllProject');
+      setBtnText('Show Less')
+    }
+    else {
+      setClasses('Project');
+      setBtnText('Show More')
+    }
+  }
+
+  let ProjectsDisplay = () => {
+    return Projects.map(project => {
+      console.log(project);
+      let techList = project.technologies.map(tech => <li>{tech}</li>);
+        return (
+          <div className="ProjectDisplayCard">
+            <h3>{project.title}</h3>
+            <h6>Technologies used:</h6>
+              <ul>
+                {techList}
+              </ul>
+              <a className="Button" target="_blank" href={project.liveLink ? project.liveLink : "#"}>Live</a>
+              <a className="Button" target="_blank" href={project.githubLink}>Code</a>
+          </div>
+        )
+    })
+  }
+
   return (
     <div className="App">
-      <header>
+      <header id="Navbar">
         <nav id="Top" className="Navbar">
-          <h3>Arun Elanthamil</h3>
+          <h1>Arun Elanthamil</h1>
           <ul className="Navlist">
             <li><a href="#Technologies">Technologies</a></li>
             <li><a href="#Projects">Projects</a></li>
@@ -19,99 +97,12 @@ function App() {
         </div>
       </header>
       <main className="Maincontent">
-        <section id="Projects" >
+        <section id="Projects" className="Projects" >
           <h1>Projects</h1>
-          <div className="Projects">
-            <div>
-              <h3>Portfolio Site (React JS)</h3>
-              <h6>Technologies used:</h6>
-                <ul>
-                  <li>React</li>
-                  <li>Javascript</li>
-                  <li>CSS</li>
-                  <li>Node JS</li>
-                  <li>Express</li>
-                </ul>
-                <button className="Button" disabled><a href="">Live</a></button>
-                <button className="Button" disabled><a href="">Code</a></button>
-            </div>
-            <div>
-              <h3>Instagram clone</h3>
-              <h6>Technologies used:</h6>
-              <ul>
-                <li>React</li>
-                <li>Firebase</li>
-                <li>Javascript</li>
-                <li>CodeSandBox</li>
-                <li>CSS</li>
-              </ul>
-                <button className="Button"><a target="_blank" href="https://tdgys.csb.app">Live</a></button>
-                <button className="Button"><a target="_blank" href="https://github.com/Et-008/instagram-clone">Code</a></button>
-            </div>
-            <div>
-              <h3>Burger builder app</h3>
-              <h6>Technologies used:</h6>
-                <ul>
-                  <li>React</li>
-                  <li>Firebase</li>
-                  <li>Javascript</li>
-                  <li>CodeSandBox</li>
-                  <li>CSS</li>
-                </ul>
-                <button className="Button"><a target="_blank" href="https://97hlm.csb.app">Live</a></button>
-                <button className="Button"><a target="_blank" href="https://github.com/Et-008/BurgerBuilder">Code</a></button>
-            </div>
-            <div>
-              <h3>NEWS APP (React JS)</h3>
-              <h6>Technologies used:</h6>
-                <ul>
-                  <li>React</li>
-                  <li>Javascript</li>
-                  <li>CSS</li>
-                  <li>Node JS</li>
-                  <li>Express</li>
-                </ul>
-                <button className="Button" disabled><a target="_blank" href="">Live</a></button>
-                <button className="Button"><a target="_blank" href="https://github.com/Et-008/News_app">Code</a></button>
-            </div>
-            <div>
-              <h3>NEWS APP (Vanilla JS)</h3>
-              <h6>Technologies used:</h6>
-                <ul>
-                  <li>Javascript</li>
-                  <li>CSS</li>
-                  <li>Node JS</li>
-                  <li>Express</li>
-                </ul>
-                <button className="Button"><a target="_blank" href="https://news-for-us.herokuapp.com/in">Live</a></button>
-                <button className="Button"><a target="_blank" href="https://github.com/Et-008/NEUS-2.0">Code</a></button>
-            </div>
-            <div>
-              <h3>Todo List app</h3>
-              <h6>Technologies used:</h6>
-                <ul>
-                  <li>Javascript</li>
-                  <li>CSS</li>
-                  <li>Node JS</li>
-                  <li>Express</li>
-                  <li>MongoDB-Atlas</li>
-                </ul>
-                <button className="Button"><a target="_blank" href="https://enigmatic-crag-81088.herokuapp.com">Live</a></button>
-                <button className="Button"><a target="_blank" href="https://github.com/Et-008/Treelo">Code</a></button>
-            </div>
-            <div>
-              <h3>GSAP sample (Vanilla JS and GSAP)</h3>
-              <h6>Technologies used:</h6>
-                <ul>
-                  <li>React</li>
-                  <li>Firebase</li>
-                  <li>Javascript</li>
-                  <li>CSS</li>
-                </ul>
-                <button className="Button" disabled><a target="_blank" href="">Live</a></button>
-                <button className="Button" ><a target="_blank" href="https://github.com/Et-008/Gsap-sample">Code</a></button>
-            </div>
+          <div className={classes}>
+            <ProjectsDisplay />
           </div>
+          <button onClick={showAllProjects} className="Button">{btnText}</button>
         </section>
         <section id="Technologies">
           <h1>Technologies</h1>
