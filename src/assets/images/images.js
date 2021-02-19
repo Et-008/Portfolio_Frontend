@@ -4,6 +4,7 @@ import portfolio from './Portfolio.png';
 import newsReact from './NewsAppReact.png';
 import instacam from './Instacam.png';
 import gsap from './GsapSample.png';
+import back from './Back.png';
 import burgerBuilder from './BurgerBuilder.png';
 import todoList from './Treelo.png';
 import newsJs from './NewsAppJS.png';
@@ -19,6 +20,7 @@ let Images = {
     todoList: todoList,
     newsJs: newsJs,
     gsap: gsap,
+    back: back,
 }
 
 export default Images

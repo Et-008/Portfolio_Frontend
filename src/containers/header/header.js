@@ -6,6 +6,13 @@ let Header = (props) => {
     return (
       <header id="Navbar" className="PageHeader">
         <Navbar />
+        <div>
+          <ul>
+            <li>Send Mail</li>
+            <li>Github</li>
+            <li>Twitter</li>
+          </ul>
+        </div>
         <Intro />
       </header>
     )

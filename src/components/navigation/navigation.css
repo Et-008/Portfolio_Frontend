@@ -1,0 +1,102 @@
+.Navbar {
+    margin: 0 auto;
+    display: flex;
+    width: 100vw;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    /* background-color: white; */
+    color: wheat;
+    justify-content: space-between;
+    align-items: center;
+}
+.BurgerButton {
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.BurgerButton>div {
+    background-color: wheat;
+    height: 2px;
+}
+.Navbar h1 {
+    margin: 0;
+}
+.Navlist {
+    display: none;
+}
+.SideDrawer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    color: black;
+    width: 60%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    position: fixed;
+    background-color: wheat;
+    transition: all 0.8s ease-in-out;
+}
+
+.SideDrawer img {
+    width: 50px;
+    height: 50px;
+    left: 0;
+}
+
+.SideDrawerList {
+    width: 100%;
+    padding: 20px 10px;
+    margin: 0;
+    box-sizing: border-box;
+}
+.SideDrawer li {
+    padding: 10px 0;
+}
+.SideDrawerList li a {
+    font-weight: bold;
+}
+
+.closed {
+    opacity: 0;
+    right: -60%;
+    display: none;
+}
+
+.open {
+    opacity: 1;
+    right: 0;
+}
+
+@media (min-width: 500px) {
+    .Navbar {
+        padding: 0 50px;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+    .BurgerButton {
+        display: none;
+    }
+    .Navbar h1 {
+        margin: 0;
+        padding-left: 50px;
+    }
+    .Navlist {
+        display: flex;
+    }
+    .SideDrawer {
+        display: none;
+    }
+    .Navlist li {
+        list-style: none;
+        padding: 10px;
+        transition: transform 0.4s ease-in;
+    }
+    .Navlist>li:hover {
+        text-shadow: 10px 10px 10px 0 black;
+        transform: scale(1.3);
+    }
+}

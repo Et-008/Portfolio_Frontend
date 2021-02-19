@@ -58,16 +58,16 @@ let Main = (props) => {
     },
   ]
 
-  let showAllProjects = () => {
-    if(classes === 'Project') {
-      setClasses('AllProject');
-      setBtnText('Show Less')
-    }
-    else {
-      setClasses('Project');
-      setBtnText('Show More')
-    }
-  }
+  // let showAllProjects = () => {
+  //   if(classes === 'Project') {
+  //     setClasses('AllProject');
+  //     setBtnText('Show Less')
+  //   }
+  //   else {
+  //     setClasses('Project');
+  //     setBtnText('Show More')
+  //   }
+  // }
 
   
 
@@ -78,7 +78,7 @@ let Main = (props) => {
           <div className={classes}>
             <Projects ProjectsList={ProjectsList}/>
           </div>
-          <button onClick={showAllProjects} className="Button">{btnText}</button>
+          {/* <button onClick={showAllProjects} className="Button">{btnText}</button> */}
         </section>
         <section id="Technologies">
           <h1 className="SubTitle">Technologies</h1>
