@@ -1,19 +1,15 @@
 import React from 'react';
 import Navbar from '../../components/navigation/navigation';
 import Intro from '../../components/intro/intro';
+import Links from '../../components/links/links';
+import './header.css';
 
 let Header = (props) => {
     return (
       <header id="Navbar" className="PageHeader">
         <Navbar />
-        <div>
-          <ul>
-            <li>Send Mail</li>
-            <li>Github</li>
-            <li>Twitter</li>
-          </ul>
-        </div>
         <Intro />
+        <Links Class="HeaderLinks" />
       </header>
     )
 }

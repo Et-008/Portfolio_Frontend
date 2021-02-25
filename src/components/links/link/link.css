@@ -1,0 +1,28 @@
+.LinkA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    font-weight: bolder;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+.LinkA:hover {
+    transform: scale(1.2);
+}
+.LinkIcons {
+    width: 30px;
+    height: 30px;
+}
+.LinkName {
+    display: none;
+}
+
+@media (min-width: 500px) {
+    .LinkName {
+        display: block;
+    }
+    .LinkIcons {
+        padding: 10px;
+    }
+}
