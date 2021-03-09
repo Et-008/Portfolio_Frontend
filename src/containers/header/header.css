@@ -1,5 +1,6 @@
 .PageHeader {
     position: relative;
+    font-family: 'DotGothic16';
     height: 40vh;
     width: 100vw;
 }

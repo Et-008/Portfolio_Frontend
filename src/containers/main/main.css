@@ -1,11 +1,8 @@
 .Maincontent {
     padding: 20px;
     background-color: aliceblue;
-}
-.Maincontent section {
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 50px;
+    display: grid;
+    gap: 50px;
 }
 .SubTitle {
     font-weight: bolder;
@@ -30,10 +27,14 @@
     padding: 20px;
 }
 .TechDisplay {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     box-sizing: border-box;
-    gap: 20px;
+    justify-content: space-around;
+}
+.TechIcons {
+    width: 40px;
+    height: 45px;
+    padding: 5px;
 }
 .ReduxIcon {
     -ms-transform: rotate(360deg);
@@ -64,6 +65,7 @@
     }
     .TechDisplay {
         display: grid;
+        grid-template-columns: repeat(4, 1fr);
         width: 80%;
         margin: 0 auto;
         /* flex-flow: row; */
