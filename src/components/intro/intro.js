@@ -1,28 +1,46 @@
-import React, { useState } from 'react';
-import './intro.css';
+import React, { useEffect } from "react";
+import { Helmet } from "react-helmet";
+import "./intro.css";
 
-let Intro = (props) => {
-    let [blinkingclasses, setblinkingclasses] = useState('Blink1')
-    // let Blink = () => {
-    //   if(blinkingclasses == 'Blink1') {
-    //       setInterval(() => {
-    //         console.log(blinkingclasses + 'if case');
-    //       }, 1000)
-    //       // setblinkingclasses('Blink2');
-    //     }
-    //   else {
-    //     setInterval(() => {
-    //       console.log(blinkingclasses + 'else case');
-    //     }, 2000)
-    //     // setblinkingclasses('Blink1');
-    //   }
-    // }
-    return (        
-        <div className="Intro">
-          <h1 className="IntroTitle">Javascript Developer</h1>
-          <a href="#Technologies" className="IntroSubTitle"><span className={blinkingclasses} ></span>Specialized in Front-End</a>
-        </div>
-    )
-}
+let Bio = (props) => {
+  return (
+    <>
+      <Helmet>
+        <title>Arun Elanthamil | Frontend Developer</title>
+        <meta
+          name="description"
+          content="Frontend developer - JS is my game, WebApps, Websites, UI UX design and development."
+        />
+        <meta
+          name="keywords"
+          content={("Web developer", "React", "SEO", "optimization")}
+        />
+        <meta
+          property="og:title"
+          content="Arun Elanthamil | Frontend Developer"
+        />
+        <meta
+          property="og:description"
+          content="Frontend developer - JS is my game, WebApps, Websites, UI UX design and development."
+        />
+        {/* <meta property="og:image" content={props.ogImage.url} /> */}
+        <meta property="og:type" content="website" />
+      </Helmet>
+      <section className="Bio">
+        <h2>
+          Creative<span>.</span>Stylish<span>.</span>Functional
+        </h2>
+        <p className="">Software engineer, in love with interfaces.</p>
+        <hr></hr>
+        <p className="Sub-text">
+          Experimenting with interfaces at{" "}
+          <a href="https://superops.ai">Superops</a>. Designing and building
+          components using <a href="https://reactjs.org">React JS</a>,{" "}
+          <a href="https://www.gatsbyjs.com/docs">Gatsby</a>.
+        </p>
+      </section>
+    </>
+  );
+};
 
-export default Intro;
+export default Bio;

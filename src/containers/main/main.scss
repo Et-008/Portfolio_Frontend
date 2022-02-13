@@ -1,0 +1,143 @@
+.Maincontent {
+  padding: 20px;
+  display: grid;
+  gap: 50px;
+  align-items: center;
+  height: 90%;
+}
+.Bio {
+  text-align: left;
+
+  h2 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+
+  hr {
+    width: 50px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .Sub-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #6f6f6f;
+  }
+
+  .Bulletpoints {
+    position: relative;
+
+    // &::before {
+    //   content: "";
+    //   width: 6px;
+    //   height: 1.5px;
+    //   position: absolute;
+    //   left: 0;
+    //   top: 10px;
+    //   background-color: #170426;
+    // }
+  }
+}
+.SubTitle {
+  font-weight: bolder;
+  font-size: 1.3em;
+  display: flex;
+  position: relative;
+}
+/* .SubTitle::before {
+    content: "";
+    background-color: cornflowerblue;
+    width: 10px;
+    height: 35px;
+    margin-right: 5px;
+    top: -5px;
+    left: 0px;
+    position: relative;
+    display: inline-block;
+} */
+.Display {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.TechDisplay {
+  margin-top: 32px;
+  display: grid;
+  box-sizing: border-box;
+  justify-content: space-around;
+}
+.TechIcons {
+  width: 40px;
+  height: 45px;
+  padding: 5px;
+  justify-self: center;
+}
+.ReduxIcon {
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+@media (min-width: 500px) {
+  .Maincontent {
+    padding: 50px;
+  }
+  .Maincontent section {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  .SubTitle {
+    font-size: 1.6em;
+    /* padding-left: 50px; */
+    /* background-color: cornflowerblue; */
+    display: inline-flex;
+  }
+  .SubTitle::before {
+    width: 15px;
+    height: 50px;
+    top: -15px;
+  }
+  .TechDisplay {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    /* flex-flow: row; */
+    justify-content: space-evenly;
+    gap: 50px;
+    /* grid-template-columns: repeat(14, 1fr); */
+  }
+  .TechIcons {
+    width: 80px;
+    height: 80px;
+  }
+  .Bulletpoints {
+    padding-left: 24px;
+  }
+}
+
+@media (min-width: 900px) {
+  .Maincontent section:nth-child(2) {
+    position: relative;
+  }
+  .Maincontent section {
+    width: 65%;
+  }
+  .ShowmoreBtn {
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

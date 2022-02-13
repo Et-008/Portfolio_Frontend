@@ -1,121 +1,170 @@
 .Navbar {
-    margin: 0 auto;
-    display: flex;
-    width: 100vw;
-    padding: 10px 15px;
-    box-sizing: border-box;
-    /* background-color: white; */
-    color: white;
-    justify-content: space-between;
-    align-items: center;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  color: rgba(25, 23, 17, 0.6);
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(247, 246, 243);
 }
-.Navbar h1 {
-    margin: 0;
-    padding-left: 20px;
-    color: white;
-    position: relative;
+.Navbar h3 {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 40px;
+  color: inherit;
+  position: relative;
 }
+.Navbar hr {
+  transform: rotate(90deg);
+  background-color: rgba(25, 23, 17, 0.6);
+  width: 40px;
+  height: 1px;
+}
+.Navbar p {
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 0;
+}
+.Home-route {
+  display: flex;
+  align-items: center;
+}
+.Home-route.open {
+  animation: 0.4s reveal-right;
+  width: 100%;
+}
+.Home-route.close {
+  animation: 0.4s hide-right;
+  width: 0px;
+}
+.Home-route.close p {
+  opacity: 0;
+}
+@keyframes hide-right {
+   from {
+      width: 100%;
+      opacity: 1;
+   }
+
+   to {
+      width: 0%;
+      opacity: 0;
+   }
+}
+@keyframes reveal-right {
+   from {
+      width: 0%;
+      opacity: 0;
+   }
+
+   to {
+      width: 100%;
+      opacity: 1;
+   }
+}
+
 .NavbarIcon {
+  width: 20px;
+  height: 28px;
+  padding: 0;
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+.Navlist {
+  display: none;
+  margin-bottom: 0;
+}
+.Navlist li {
+  font-size: 14px;
+}
+.SideDrawer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  color: black;
+  width: 60%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  z-index: 200;
+  position: fixed;
+  background-color: white;
+  /* transition: all 0.8s ease-in-out; */
+}
+.BurgerButton {
+  width: 30px;
+  display: grid;
+  gap: 5px;
+  cursor: pointer;
+}
+.BurgerButton > div {
+  background-color: white;
+  height: 2px;
+}
+.SideDrawer img {
+  width: 50px;
+  height: 50px;
+  left: 0;
+  cursor: pointer;
+}
+
+.SideDrawerList {
+  width: 100%;
+  padding: 20px 10px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.SideDrawer li {
+  padding: 10px 0;
+}
+.SideDrawerList li a {
+  font-weight: bold;
+}
+
+.closed {
+  opacity: 0;
+  right: -60%;
+  transition: all 0.5s ease-in-out;
+}
+
+.open {
+  opacity: 1;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+@media (min-width: 667px) {
+  .Navbar {
+    padding: 15px 50px;
+    flex-flow: row;
+  }
+  .NavbarIcon {
     width: 20px;
     height: 28px;
     padding: 0;
     position: absolute;
     top: 4px;
-    left: 0;
-}
-.Navlist {
-    display: none;
-}
-.SideDrawer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
-    color: black;
-    width: 60%;
-    height: 100vh;
-    top: 0;
-    right: 0;
-    z-index: 200;
-    position: fixed;
-    background-color: white;
-    /* transition: all 0.8s ease-in-out; */
-}
-.BurgerButton {
-    width: 30px;
-    display: grid;
-    gap: 5px;
-    cursor: pointer;
-}
-.BurgerButton>div {
-    background-color: white;
-    height: 2px;
-}
-.SideDrawer img {
-    width: 50px;
-    height: 50px;
-    left: 0;
-    cursor: pointer;
-}
-
-.SideDrawerList {
-    width: 100%;
-    padding: 20px 10px;
+    left: 30px;
+  }
+  .Navbar h1 {
     margin: 0;
-    box-sizing: border-box;
-}
-.SideDrawer li {
-    padding: 10px 0;
-}
-.SideDrawerList li a {
-    font-weight: bold;
-}
-
-.closed {
-    opacity: 0;
-    right: -60%;
-    transition: all 0.5s ease-in-out;
-}
-
-.open {
-    opacity: 1;
-    right: 0;
-    transition: all 0.5s ease-in-out;
-}
-
-@media (min-width: 667px) {
-    .Navbar {
-        padding: 0 50px;
-        flex-flow: row;
-        justify-content: space-between;
-    }
-    .NavbarIcon {
-        width: 20px;
-        height: 28px;
-        padding: 0;
-        position: absolute;
-        top: 4px;
-        left: 30px;
-    }
-    .Navbar h1 {
-        margin: 0;
-        padding-left: 50px;
-    }
-    .Navlist {
-        display: flex;
-    }
-    .BurgerButton {
-        display: none;
-    }
-    .SideDrawer {
-        display: none;
-    }
-    .Navlist li {
-        list-style: none;
-        padding: 10px 20px;
-        transition: all 0.3s ease-in-out;
-    }
-    .Navlist li:hover {
-        transform: scale(1.3);
-    }
+  }
+  .Navlist {
+    display: flex;
+  }
+  .BurgerButton {
+    display: none;
+  }
+  .SideDrawer {
+    display: none;
+  }
+  .Navlist li {
+    list-style: none;
+    padding: 0 20px;
+    transition: all 0.2s ease-in-out;
+  }
 }

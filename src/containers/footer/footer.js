@@ -1,6 +1,6 @@
 import React from 'react';
 import Links from '../../components/links/links';
-import './footer.css';
+import './footer.scss';
 
 let Header = (props) => {
     return (
